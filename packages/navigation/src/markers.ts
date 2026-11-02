@@ -51,9 +51,9 @@ export function getMarkerPositions(
   const scrollerStyles = getComputedStyle(scroller);
   const rtl = scrollerStyles.direction === "rtl";
   const scrollPaddingStart =
-    parseFloat(scrollerStyles.scrollPaddingInlineStart) || 0;
+    Number.parseFloat(scrollerStyles.scrollPaddingInlineStart) || 0;
   const scrollPaddingEnd =
-    parseFloat(scrollerStyles.scrollPaddingInlineEnd) || 0;
+    Number.parseFloat(scrollerStyles.scrollPaddingInlineEnd) || 0;
 
   // The associated target position of each target — its scroll-into-view
   // position, respecting its own `scroll-snap-align`.

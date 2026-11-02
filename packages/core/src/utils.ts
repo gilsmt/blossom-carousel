@@ -24,7 +24,7 @@ export function project(
 }
 
 export function resolveCSSLength(parent: Element, value: string): number {
-  const num = parseFloat(value);
+  const num = Number.parseFloat(value);
   if (!isNaN(num) && !value.includes("calc")) return num;
   if (value === "auto" || value === "normal" || !value) return 0;
   const container = document.createElement("div");
