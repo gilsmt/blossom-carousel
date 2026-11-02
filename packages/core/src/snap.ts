@@ -80,8 +80,8 @@ export function findSnapPositions(
       const clientWidth = target.clientWidth;
       const left = elementRect.left - scrollerRect.left + scroller.scrollLeft;
       const styles = window.getComputedStyle(target);
-      const marginStart = parseFloat(styles.scrollMarginInlineStart) || 0;
-      const marginEnd = parseFloat(styles.scrollMarginInlineEnd) || 0;
+      const marginStart = Number.parseFloat(styles.scrollMarginInlineStart) || 0;
+      const marginEnd = Number.parseFloat(styles.scrollMarginInlineEnd) || 0;
       const snapAreaStart = left - marginStart;
       const snapAreaEnd = left + clientWidth + marginEnd;
 

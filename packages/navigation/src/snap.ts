@@ -101,8 +101,8 @@ export function snapPositionFor(
     ? scrollerRect.right - rect.right
     : rect.left - scrollerRect.left;
   const left = startEdge + logicalScrollLeft(scroller, rtl);
-  const marginStart = parseFloat(styles.scrollMarginInlineStart) || 0;
-  const marginEnd = parseFloat(styles.scrollMarginInlineEnd) || 0;
+  const marginStart = Number.parseFloat(styles.scrollMarginInlineStart) || 0;
+  const marginEnd = Number.parseFloat(styles.scrollMarginInlineEnd) || 0;
   const snapAreaStart = left - marginStart;
   const snapAreaEnd = left + target.clientWidth + marginEnd;
   const scrollport = scroller.clientWidth;
@@ -143,9 +143,9 @@ export function getSnapPositions(scroller: HTMLElement): SnapPoint[] {
   const scrollerStyles = getComputedStyle(scroller);
   const rtl = scrollerStyles.direction === "rtl";
   const scrollPaddingStart =
-    parseFloat(scrollerStyles.scrollPaddingInlineStart) || 0;
+    Number.parseFloat(scrollerStyles.scrollPaddingInlineStart) || 0;
   const scrollPaddingEnd =
-    parseFloat(scrollerStyles.scrollPaddingInlineEnd) || 0;
+    Number.parseFloat(scrollerStyles.scrollPaddingInlineEnd) || 0;
   const maxScroll = Math.max(scroller.scrollWidth - scroller.clientWidth, 0);
 
   const walker = document.createTreeWalker(scroller, NodeFilter.SHOW_ELEMENT);
